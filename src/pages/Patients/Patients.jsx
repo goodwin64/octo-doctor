@@ -3,6 +3,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { TableControls, itemsViews } from '../../components/TableControls/TableControls';
 import { PatientsTable } from './PatientsTable';
+import Box from '@material-ui/core/Box';
 
 const columnNameToDataKey = {
   Name: 'firstName',
@@ -36,16 +37,18 @@ export function Patients() {
 
   return (
     <>
-      <Typography>Patients ({patients.length})</Typography>
-      <TableControls
-        sortBy={sortBy}
-        sortByItems={columnNames}
-        handleSortByChange={handleSortByChange}
-        view={itemsView}
-        handleViewChange={setItemsView}
-        search={search}
-        handleSearchChange={setSearch}
-      />
+      <Typography variant={'h3'}>Patients ({patients.length})</Typography>
+      <Box py={4}>
+        <TableControls
+          sortBy={sortBy}
+          sortByItems={columnNames}
+          handleSortByChange={handleSortByChange}
+          view={itemsView}
+          handleViewChange={setItemsView}
+          search={search}
+          handleSearchChange={setSearch}
+        />
+      </Box>
       <PatientsTable
         rows={patients}
         columnNames={columnNames}
