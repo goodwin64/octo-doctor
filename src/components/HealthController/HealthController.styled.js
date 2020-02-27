@@ -23,5 +23,17 @@ export const useStyles = makeStyles((theme) => {
         backgroundColor: theme.palette.primary.main,
       },
     },
-  })
+    tooltipContentContainer: {
+      width: theme.spacing(20),
+
+      '& .circle-alert': {
+        color: theme.palette.error.main,
+        fontSize: 32,
+      },
+      '& .circle-norm': {
+        color: theme.palette.primary.main,
+        fontSize: 32,
+      },
+    },
+  });
 });
