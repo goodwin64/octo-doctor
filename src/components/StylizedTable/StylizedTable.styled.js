@@ -26,9 +26,10 @@ export const useStyles = makeStyles((theme) => createStyles({
 
         '& span': {
           position: 'absolute',
-          right: 0,
+          right: theme.spacing(1),
           top: '50%',
           transform: 'translateY(-50%)',
+          height: theme.spacing(3),
         },
       },
     },
