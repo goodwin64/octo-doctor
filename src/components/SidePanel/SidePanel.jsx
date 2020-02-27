@@ -15,6 +15,7 @@ import { useStyles } from './SidePanel.styled';
 import Divider from '@material-ui/core/Divider';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Box from '@material-ui/core/Box';
+import { Link } from 'react-router-dom';
 
 const listItems = ['Overview', 'Patients', 'Alerts', 'Notes', 'Reports'];
 const itemToIcon = {
@@ -68,7 +69,13 @@ export function SidePanel() {
           {listItems.map((text) => {
             const Icon = itemToIcon[text];
             return (
-              <ListItem button key={text} disabled={text !== listItems[1]}>
+              <ListItem
+                button
+                key={text}
+                disabled={text !== listItems[1]}
+                component={Link}
+                to={text === listItems[1] ? '/patients' : undefined}
+              >
                 <ListItemIcon><Icon color={text === listItems[1] ? 'primary' : 'disabled'} /></ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>

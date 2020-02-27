@@ -9,6 +9,7 @@ import HelpIcon from '@material-ui/icons/Help';
 import Avatar from '@material-ui/core/Avatar';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Box from '@material-ui/core/Box';
+import { Link } from 'react-router-dom';
 
 export function Header() {
   const classes = useStyles();
@@ -25,7 +26,7 @@ export function Header() {
 
         <Grid container alignItems={'center'} justify={'space-between'} className={classes.actionButtons}>
           <NotificationsIcon/>
-          <HelpIcon/>
+          <Link to={'/health-controller'}><HelpIcon/></Link>
           <Avatar>AW</Avatar>
           <Typography variant={'body1'}>Dr. Andrew</Typography>
           <ExpandMoreIcon/>

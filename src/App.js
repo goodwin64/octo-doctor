@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import { ActiveRoute } from './components/ActiveRoute/ActiveRoute';
 import { PageWrapper } from './components/PageWrapper/PageWrapper';
@@ -12,17 +13,19 @@ import Box from '@material-ui/core/Box';
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
-      <div className="App">
-        <Header/>
-        <Grid container>
-          <SidePanel/>
-          <Box style={{ flex: 1}}>
-            <PageWrapper>
-              <ActiveRoute/>
-            </PageWrapper>
-          </Box>
-        </Grid>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <Grid container>
+            <SidePanel />
+            <Box style={{ flex: 1 }}>
+              <PageWrapper>
+                <ActiveRoute />
+              </PageWrapper>
+            </Box>
+          </Grid>
+        </div>
+      </BrowserRouter>
     </MuiThemeProvider>
   );
 }
