@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StylizedTable } from '../../components/StylizedTable/StylizedTable';
 import { Avatar, TableContainer } from '@material-ui/core';
+import dayjs from 'dayjs';
 
 export function PatientsTable(props) {
   const { rows } = props;
@@ -51,6 +52,15 @@ export function PatientsTable(props) {
       {
         Header: 'Last Measurement',
         accessor: 'lastMeasurement',
+        Cell: (
+          {
+            row: {
+              original: {
+                lastMeasurement,
+              },
+            },
+          },
+        ) => dayjs(lastMeasurement).format('MMM DD, YYYY, HH:mm A'),
       },
     ],
     [],
