@@ -1,5 +1,8 @@
 import React from 'react';
 import { useSortBy, useTable } from 'react-table';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { useStyles } from './StylizedTable.styled';
 
 export function StylizedTable({ columns, data }) {
   const {
@@ -16,13 +19,15 @@ export function StylizedTable({ columns, data }) {
     useSortBy,
   );
 
+  const classes = useStyles();
+
   // We don't want to render all 2000 rows for this example, so cap
   // it at 20 for this use case
   const firstPageRows = rows.slice(0, 20);
 
   return (
     <>
-      <table {...getTableProps()}>
+      <table {...getTableProps()} className={classes.table}>
         <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
@@ -31,12 +36,11 @@ export function StylizedTable({ columns, data }) {
               // we can add them into the header props
               <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                 {column.render('Header')}
-                {/* Add a sort direction indicator */}
                 <span>
                     {column.isSorted
                       ? column.isSortedDesc
-                        ? ' 🔽'
-                        : ' 🔼'
+                        ? <ExpandMoreIcon />
+                        : <ExpandLessIcon />
                       : ''}
                   </span>
               </th>
