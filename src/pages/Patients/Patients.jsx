@@ -19,11 +19,6 @@ const columnNameToDataKey = {
 const columnNames = Object.keys(columnNameToDataKey);
 const columnDataKeys = columnNames.map((name) => columnNameToDataKey[name]);
 
-function getSortingComparison(a, b, sorter, isAsc) {
-  const diff = a[columnNameToDataKey[sorter]] - b[columnNameToDataKey[sorter]];
-  return isAsc ? diff : -1 * diff;
-}
-
 /* Memoization could help to keep the proper performance */
 function getVisiblePatients(allPatients, searchValue) {
   if (!searchValue) {
