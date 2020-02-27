@@ -7,8 +7,8 @@ node_js:
   - "stable"
 
 script:
-  - npm run test
-  - npm run build
+  - yarn test
+  - yarn build
 
 deploy:
   provider: pages
