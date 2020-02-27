@@ -2,7 +2,7 @@
   "name": "octo-doctor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://maxdon.design/octo-doctor/",
+  "homepage": "https://goodwin64.github.io/octo-doctor/",
   "dependencies": {
     "@material-ui/core": "^4.9.4",
     "@material-ui/icons": "^4.9.1",
