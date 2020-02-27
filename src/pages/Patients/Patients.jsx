@@ -76,7 +76,6 @@ export function Patients() {
         rows={visiblePatients}
         columnNames={columnNames}
         columnDataKeys={columnDataKeys}
-        handleSortByChange={handleSortByChange}
         onRemovePatient={onRemovePatient}
       />
     </>

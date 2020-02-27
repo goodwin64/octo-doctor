@@ -31,6 +31,7 @@ export function TableControls(
         <Select
           value={sortBy}
           onChange={(e) => handleSortByChange(e.target.value)}
+          disabled
         >
           {
             sortByItems.map(item => (
