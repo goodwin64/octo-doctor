@@ -25,19 +25,23 @@ function getSortingComparison(a, b, sorter, isAsc) {
 }
 
 export function Patients() {
-  const [patients, setPatients] = React.useState(mockPatients);
+  const [allPatients, setAllPatients] = React.useState(mockPatients);
   const [sortBy, setSortBy] = React.useState('Name');
   const [itemsView, setItemsView] = React.useState(itemsViews[0]);
   const [search, setSearch] = React.useState('');
 
   const handleSortByChange = (sorter, isAscending) => {
     setSortBy(sorter);
-    setPatients([...mockPatients].sort((a, b) => getSortingComparison(a, b, sorter, isAscending)));
+  };
+
+  const onRemovePatient = (patientId) => {
+    console.log('patientId', patientId);
+    setAllPatients(allPatients.filter(({ Id }) => Id !== patientId))
   };
 
   return (
     <>
-      <Typography variant={'h3'}>Patients ({patients.length})</Typography>
+      <Typography variant={'h3'}>Patients ({allPatients.length})</Typography>
       <Box py={4}>
         <TableControls
           sortBy={sortBy}
@@ -50,10 +54,11 @@ export function Patients() {
         />
       </Box>
       <PatientsTable
-        rows={patients}
+        rows={allPatients}
         columnNames={columnNames}
         columnDataKeys={columnDataKeys}
         handleSortByChange={handleSortByChange}
+        onRemovePatient={onRemovePatient}
       />
     </>
   );
