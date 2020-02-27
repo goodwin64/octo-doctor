@@ -51,7 +51,7 @@ export function PatientsTable(props) {
       },
       {
         Header: 'Last Measurement',
-        accessor: 'lastMeasurement',
+        accessor: (value) => +dayjs(value.lastMeasurement),
         Cell: (
           {
             row: {
