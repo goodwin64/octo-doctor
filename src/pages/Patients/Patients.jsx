@@ -24,19 +24,38 @@ function getSortingComparison(a, b, sorter, isAsc) {
   return isAsc ? diff : -1 * diff;
 }
 
+/* Memoization could help to keep the proper performance */
+function getVisiblePatients(allPatients, searchValue) {
+  if (!searchValue) {
+    return allPatients;
+  }
+  return allPatients.filter((patient) => Boolean(
+    String(patient.Id).toLowerCase().includes(searchValue.toLowerCase()) ||
+    String(patient.firstName).toLowerCase().includes(searchValue.toLowerCase()) ||
+    String(patient.last_name).toLowerCase().includes(searchValue.toLowerCase()) ||
+    String(patient.age).toLowerCase().includes(searchValue.toLowerCase()) ||
+    String(patient.gender).toLowerCase().includes(searchValue.toLowerCase()) ||
+    String(patient.height).toLowerCase().includes(searchValue.toLowerCase()) ||
+    String(patient.wight).toLowerCase().includes(searchValue.toLowerCase()) ||
+    String(patient.status).toLowerCase().includes(searchValue.toLowerCase()) ||
+    String(patient.lastMeasurement).toLowerCase().includes(searchValue.toLowerCase()),
+  ))
+}
+
 export function Patients() {
   const [allPatients, setAllPatients] = React.useState(mockPatients);
   const [sortBy, setSortBy] = React.useState('Name');
   const [itemsView, setItemsView] = React.useState(itemsViews[0]);
   const [search, setSearch] = React.useState('');
 
+  const visiblePatients = getVisiblePatients(allPatients, search);
+
   const handleSortByChange = (sorter, isAscending) => {
     setSortBy(sorter);
   };
 
   const onRemovePatient = (patientId) => {
-    console.log('patientId', patientId);
-    setAllPatients(allPatients.filter(({ Id }) => Id !== patientId))
+    setAllPatients(allPatients.filter(({ Id }) => Id !== patientId));
   };
 
   return (
@@ -54,7 +73,7 @@ export function Patients() {
         />
       </Box>
       <PatientsTable
-        rows={allPatients}
+        rows={visiblePatients}
         columnNames={columnNames}
         columnDataKeys={columnDataKeys}
         handleSortByChange={handleSortByChange}
