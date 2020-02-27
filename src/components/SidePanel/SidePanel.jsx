@@ -14,6 +14,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { useStyles } from './SidePanel.styled';
 import Divider from '@material-ui/core/Divider';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import Box from '@material-ui/core/Box';
 
 const listItems = ['Overview', 'Patients', 'Alerts', 'Notes', 'Reports'];
 const itemToIcon = {
@@ -23,6 +24,8 @@ const itemToIcon = {
   [listItems[3]]: NoteIcon,
   [listItems[4]]: TimelineIcon,
 };
+
+export const SIDEBAR_WIDTH = 240;
 
 export function SidePanel() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -37,7 +40,7 @@ export function SidePanel() {
   };
 
   return (
-    <aside>
+    <Box component={'aside'} className={classes.sidebar}>
       <IconButton
         color="inherit"
         aria-label="open drawer"
@@ -47,7 +50,14 @@ export function SidePanel() {
       >
         <MenuIcon />
       </IconButton>
-      <Drawer open={isOpen} onClose={() => setIsOpen(false)}>
+      <Drawer
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        className={classes.drawer}
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+      >
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
@@ -56,16 +66,16 @@ export function SidePanel() {
         <Divider />
         <List>
           {listItems.map((text) => {
-            const Icon = itemToIcon[text]
+            const Icon = itemToIcon[text];
             return (
               <ListItem button key={text}>
-                <ListItemIcon><Icon/></ListItemIcon>
+                <ListItemIcon><Icon /></ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
-            )
+            );
           })}
         </List>
       </Drawer>
-    </aside>
+    </Box>
   );
 }
