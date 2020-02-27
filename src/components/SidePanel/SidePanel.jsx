@@ -68,8 +68,8 @@ export function SidePanel() {
           {listItems.map((text) => {
             const Icon = itemToIcon[text];
             return (
-              <ListItem button key={text}>
-                <ListItemIcon><Icon /></ListItemIcon>
+              <ListItem button key={text} disabled={text !== listItems[1]}>
+                <ListItemIcon><Icon color={text === listItems[1] ? 'primary' : 'disabled'} /></ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             );
