@@ -25,7 +25,7 @@ const itemToIcon = {
 };
 
 export function SidePanel() {
-  const [isOpen, setIsOpen] = React.useState(true);
+  const [isOpen, setIsOpen] = React.useState(false);
   const classes = useStyles();
 
   const handleDrawerOpen = () => {

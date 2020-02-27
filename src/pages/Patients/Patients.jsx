@@ -2,20 +2,24 @@ import mockPatients from './mockPatients';
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { TableControls, itemsViews } from '../../components/TableControls/TableControls';
+import { PatientsTable } from './PatientsTable';
 
-const sorterToKey = {
-  Name: 'last_name',
+const columnNameToDataKey = {
+  Name: 'firstName',
+  'Last Name': 'last_name',
   Age: 'age',
   Gender: 'Gender',
   Height: 'height',
   Weight: 'wight',
   Status: 'status',
+  'Last Measurement': 'lastMeasurement',
 };
 
-const sortByItems = Object.keys(sorterToKey);
+const columnNames = Object.keys(columnNameToDataKey);
+const columnDataKeys = columnNames.map((name) => columnNameToDataKey[name]);
 
 function getSortingComparison(a, b, sorter, isAsc) {
-  const diff = a[sorterToKey[sorter]] - b[sorterToKey[sorter]];
+  const diff = a[columnNameToDataKey[sorter]] - b[columnNameToDataKey[sorter]];
   return isAsc ? diff : -1 * diff;
 }
 
@@ -35,12 +39,18 @@ export function Patients() {
       <Typography>Patients ({patients.length})</Typography>
       <TableControls
         sortBy={sortBy}
-        sortByItems={sortByItems}
+        sortByItems={columnNames}
         handleSortByChange={handleSortByChange}
         view={itemsView}
         handleViewChange={setItemsView}
         search={search}
         handleSearchChange={setSearch}
+      />
+      <PatientsTable
+        rows={patients}
+        columnNames={columnNames}
+        columnDataKeys={columnDataKeys}
+        handleSortByChange={handleSortByChange}
       />
     </>
   );
