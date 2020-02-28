@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/octo-doctor/precache-manifest.a98635c506f20dee70ac612abbc941d1.js"
+  "/octo-doctor/precache-manifest.005a7f783fb1aa14c3491795a08744c2.js"
 );
 
 self.addEventListener('message', (event) => {
