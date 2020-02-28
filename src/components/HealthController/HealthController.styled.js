@@ -11,12 +11,13 @@ export const useStyles = makeStyles((theme) => {
     barsContainer: {
       height: theme.spacing(15),
       width: theme.spacing(6),
+      borderTopLeftRadius: theme.spacing(6),
+      borderTopRightRadius: theme.spacing(6),
+      overflow: 'hidden',
 
       '& .alert-bar': {
         ...commonBarStyles,
         backgroundColor: theme.palette.error.light,
-        borderTopLeftRadius: theme.spacing(6),
-        borderTopRightRadius: theme.spacing(6),
       },
       '& .norm-bar': {
         ...commonBarStyles,
