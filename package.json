@@ -2,7 +2,7 @@
   "name": "octo-doctor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://goodwin64.github.io/octo-doctor/",
+  "homepage": "http://maxdon.design/octo-doctor/",
   "dependencies": {
     "@material-ui/core": "^4.9.4",
     "@material-ui/icons": "^4.9.1",
@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "classnames": "^2.2.6",
     "dayjs": "^1.8.21",
+    "gh-pages": "^2.2.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
