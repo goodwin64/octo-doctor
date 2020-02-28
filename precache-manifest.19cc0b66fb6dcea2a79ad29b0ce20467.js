@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "512fc556173920c74f80c05f03313d8e",
+    "revision": "a26464266b21ab47d104d7b282a8757d",
     "url": "/octo-doctor/index.html"
   },
   {
-    "revision": "c108ca368a3f1cd99c77",
+    "revision": "020286d1018292366f7d",
     "url": "/octo-doctor/static/css/main.c082d0e2.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/octo-doctor/static/js/2.e39ac133.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c108ca368a3f1cd99c77",
-    "url": "/octo-doctor/static/js/main.ae4dddb3.chunk.js"
+    "revision": "020286d1018292366f7d",
+    "url": "/octo-doctor/static/js/main.2b701dd2.chunk.js"
   },
   {
     "revision": "ef45ca9126e84803baf9",
