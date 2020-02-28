@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/octo-doctor/static/css/main.c082d0e2.chunk.css",
-    "main.js": "/octo-doctor/static/js/main.2b701dd2.chunk.js",
-    "main.js.map": "/octo-doctor/static/js/main.2b701dd2.chunk.js.map",
+    "main.js": "/octo-doctor/static/js/main.fff05605.chunk.js",
+    "main.js.map": "/octo-doctor/static/js/main.fff05605.chunk.js.map",
     "runtime-main.js": "/octo-doctor/static/js/runtime-main.89f2e9a3.js",
     "runtime-main.js.map": "/octo-doctor/static/js/runtime-main.89f2e9a3.js.map",
-    "static/js/2.e39ac133.chunk.js": "/octo-doctor/static/js/2.e39ac133.chunk.js",
-    "static/js/2.e39ac133.chunk.js.map": "/octo-doctor/static/js/2.e39ac133.chunk.js.map",
+    "static/js/2.3e9a8797.chunk.js": "/octo-doctor/static/js/2.3e9a8797.chunk.js",
+    "static/js/2.3e9a8797.chunk.js.map": "/octo-doctor/static/js/2.3e9a8797.chunk.js.map",
     "index.html": "/octo-doctor/index.html",
-    "precache-manifest.19cc0b66fb6dcea2a79ad29b0ce20467.js": "/octo-doctor/precache-manifest.19cc0b66fb6dcea2a79ad29b0ce20467.js",
+    "precache-manifest.bcbc6e6e1c78fe1c33a7800a3cb82f76.js": "/octo-doctor/precache-manifest.bcbc6e6e1c78fe1c33a7800a3cb82f76.js",
     "service-worker.js": "/octo-doctor/service-worker.js",
     "static/css/main.c082d0e2.chunk.css.map": "/octo-doctor/static/css/main.c082d0e2.chunk.css.map",
-    "static/js/2.e39ac133.chunk.js.LICENSE.txt": "/octo-doctor/static/js/2.e39ac133.chunk.js.LICENSE.txt",
+    "static/js/2.3e9a8797.chunk.js.LICENSE.txt": "/octo-doctor/static/js/2.3e9a8797.chunk.js.LICENSE.txt",
     "static/media/img-cubx-logo.svg": "/octo-doctor/static/media/img-cubx-logo.ce436f26.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.89f2e9a3.js",
-    "static/js/2.e39ac133.chunk.js",
+    "static/js/2.3e9a8797.chunk.js",
     "static/css/main.c082d0e2.chunk.css",
-    "static/js/main.2b701dd2.chunk.js"
+    "static/js/main.fff05605.chunk.js"
   ]
 }
