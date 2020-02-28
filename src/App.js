@@ -13,7 +13,7 @@ import Box from '@material-ui/core/Box';
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
-      <BrowserRouter basename={'octo-doctor'}>
+      <BrowserRouter basename={`${process.env.PUBLIC_URL}/`}>
         <div className="App">
           <Header />
           <Grid container>
